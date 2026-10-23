@@ -1,7 +1,9 @@
 const btn = document.getElementById("greetBtn");
 const greetings = ["Hello!", "Hola!", "Bonjour!", "Ciao!", "Hallo!", "こんにちは!"];
 
+let index = 0;
+
 btn.addEventListener("click", () => {
-  const random = greetings[Math.floor(Math.random() * greetings.length)];
-  btn.textContent = random;
+  index = (index + 1) % greetings.length;
+  btn.textContent = greetings[index];
 });
